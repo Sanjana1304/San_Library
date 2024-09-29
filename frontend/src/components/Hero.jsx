@@ -51,25 +51,6 @@ const Hero = () => {
             </table>
         </div>
         <div className="h-60 overflow-y-auto w-1/2 bg-green-200 p-3 rounded-lg">
-            {/* <h1 className='font-semibold text-xl text-center'>All Books</h1>
-            <table className='border border-black mx-auto'>
-                <thead className='border border-black'>
-                    <tr>
-                        <th className='border border-black p-1'>Name</th>
-                        <th className='border border-black p-1'>Category</th>
-                        <th className='border border-black p-1'>Rent per Day</th>
-                    </tr>
-                </thead>
-                <tbody className=''>
-                    {allBooks.map(book => (
-                        <tr key={book._id} className='border border-black'>
-                            <td className='border border-black p-1'>{book.bookName}</td>
-                            <td className='border border-black p-1'>{book.category}</td>
-                            <td className='p-1'>{book.rentPerDay}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table> */}
             <TableList results={allBooks} head='All Books'/>
         </div>
     </div>

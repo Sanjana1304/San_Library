@@ -109,7 +109,7 @@ transacRouter2.get('/user/history/:userName', async (req, res) => {
 
 // INPUT - Date range
 // OUTPUT - list of books issued in that date range and the person they are issued to
-transacRouter2.get('/date/history', async (req, res) => {
+transacRouter2.post('/date/history', async (req, res) => {
     const { startDate, endDate } = req.body;
 
     try {
@@ -121,7 +121,7 @@ transacRouter2.get('/date/history', async (req, res) => {
             }
         });
 
-        if (transactions.length === 0) return res.status(404).json({ message: "No transactions found for this date range" });
+        if (transactions.length === 0) return res.status(200).json({ message: "No transactions found for this date range" });
 
         // Filter all transactions with users who issued the book in the past
         const pastIssued = transactions.filter(transaction => transaction.status === "returned" || transaction.status === "issued");
