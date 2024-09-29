@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bookRouter = require('./routes/bookRoute');
 const transacRouter = require('./routes/transacRoute');
+const transacRouter2 = require('./routes/transacRoute2');
 
 const app = express();
 app.use(cookieParser());
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/books', bookRouter);
 app.use('/api/transactions', transacRouter);
+app.use('/api/transactions2', transacRouter2);
 
 
 
