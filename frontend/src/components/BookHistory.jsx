@@ -18,14 +18,12 @@ const BookHistory = () => {
         e.preventDefault()
         try {
             const response = await api.get(`/api/transactions2/book/history/${bookTerm}`);
-            console.log(response.data);
             setBookTermResults(response.data.users);
             setIssueCount(response.data.totalIssuedCount);
 
             const response2 = await api.get(`/api/transactions2/book/current/${bookTerm}`);
             if(response2.data.message === "The book is currently issued"){
                 setCurrentUser(response2.data);
-                console.log(response2.data);
                 setIsCurrUser(true);
             }
             else if(response2.data.message === "The book is not issued at the moment"){
@@ -33,7 +31,6 @@ const BookHistory = () => {
             }
 
             const response3 = await api.get(`/api/transactions2/book/rent/${bookTerm}`);
-            console.log(response3.data);
             setTotalRentGenerated(response3.data.totalRent);
 
         } catch (error) {

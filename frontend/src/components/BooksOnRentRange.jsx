@@ -12,7 +12,6 @@ const BooksOnRentRange = () => {
         try {
             const response = await api.get(`/api/books/rent?min=${minPrice}&max=${maxPrice}`);
             setBookTermResults(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log(error);
         }

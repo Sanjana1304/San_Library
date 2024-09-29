@@ -11,7 +11,6 @@ const BooksOnTerm = () => {
         try {
             const response = await api.get(`/api/books/term?term=${bookTerm}`);
             setBookTermResults(response.data);
-            console.log(response.data);
 
 
         } catch (error) {
