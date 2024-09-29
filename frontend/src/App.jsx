@@ -1,13 +1,20 @@
 import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route,Routes } from 'react-router-dom'
+import Home from './components/Home'
+import Transactions from './components/Transaction'
 
 
 function App() {
 
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/transaction" element={<Transactions />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
