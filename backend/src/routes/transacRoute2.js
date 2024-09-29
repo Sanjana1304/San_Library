@@ -1,6 +1,7 @@
 const express = require("express");
 const transactionSchemaModel = require("../schema/transactionSchemaCode");
 const bookSchemaModel = require("../schema/bookSchemacode");
+const userSchemaModel = require("../schema/userSchemaCode");
 
 const transacRouter2 = express.Router();
 
@@ -138,6 +139,26 @@ transacRouter2.get('/date/history', async (req, res) => {
         res.status(200).json({ totalIssuedCount, books });
     } catch (error) {
         res.status(500).json({ error: "An error occurred while fetching the book's issue history" });
+    }
+});
+
+//HELPER APIS: to get LIST OF ALL USERS
+transacRouter2.get('/users', async (req, res) => {
+    try {
+        const users = await userSchemaModel.find();
+        res.status(200).json({ users });
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while fetching the list of users" });
+    }
+});
+
+//HELPER APIS: to get LIST OF ALL BOOKS
+transacRouter2.get('/books', async (req, res) => {
+    try {
+        const books = await bookSchemaModel.find();
+        res.status(200).json({ books });
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while fetching the list of books" });
     }
 });
 
