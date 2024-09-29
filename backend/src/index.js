@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bookRouter = require('./routes/bookRoute');
+const transacRouter = require('./routes/transacRoute');
 
 const app = express();
 app.use(cookieParser());
@@ -34,6 +35,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/books', bookRouter);
+app.use('/api/transactions', transacRouter);
+
 
 
 const port = 3000;
