@@ -146,7 +146,7 @@ transacRouter2.get('/date/history', async (req, res) => {
 transacRouter2.get('/users', async (req, res) => {
     try {
         const users = await userSchemaModel.find();
-        res.status(200).json({ users });
+        res.status(200).json(users);
     } catch (error) {
         res.status(500).json({ error: "An error occurred while fetching the list of users" });
     }
@@ -156,7 +156,7 @@ transacRouter2.get('/users', async (req, res) => {
 transacRouter2.get('/books', async (req, res) => {
     try {
         const books = await bookSchemaModel.find();
-        res.status(200).json({ books });
+        res.status(200).json(books);
     } catch (error) {
         res.status(500).json({ error: "An error occurred while fetching the list of books" });
     }
