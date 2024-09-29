@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import api from '../api/axiosConfig'
+import TableList from './TableList'
 
 const Hero = () => {
     const [allUsers, setAllUsers] = useState([])
@@ -10,7 +11,6 @@ const Hero = () => {
         const fetchUsers = async () => {
             const response = await api.get('/api/transactions2/users')
             const data = await response.data
-            console.log(data);
             setAllUsers(data)
         }
 
@@ -18,7 +18,6 @@ const Hero = () => {
         const fetchBooks = async () => {
             const response = await api.get('/api/transactions2/books')
             const data = await response.data
-            console.log(data);
             setAllBooks(data)
         }
 
@@ -52,7 +51,7 @@ const Hero = () => {
             </table>
         </div>
         <div className="h-60 overflow-y-auto w-1/2 bg-green-200 p-3 rounded-lg">
-            <h1 className='font-semibold text-xl text-center'>All Books</h1>
+            {/* <h1 className='font-semibold text-xl text-center'>All Books</h1>
             <table className='border border-black mx-auto'>
                 <thead className='border border-black'>
                     <tr>
@@ -70,7 +69,8 @@ const Hero = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table> */}
+            <TableList results={allBooks} head='All Books'/>
         </div>
     </div>
 
