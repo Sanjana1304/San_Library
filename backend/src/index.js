@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const bookRouter = require('./routes/bookRoute');
 
 const app = express();
 app.use(cookieParser());
@@ -31,6 +32,9 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/', (req, res) => {
   res.send('Hello, Sanj from the backend !!!');
 });
+
+app.use('/api/books', bookRouter);
+
 
 const port = 3000;
 app.listen(port, () => {
