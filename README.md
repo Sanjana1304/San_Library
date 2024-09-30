@@ -183,8 +183,8 @@ The frontend is built using React and styled with Tailwind CSS. It interacts wit
 
 ## Deployment
 
-- **Frontend:** Deployed on Vercel. Access it at: [Vercel Deployed Link]
-- **Backend:** Deployed on Render. Access the API endpoints at: [Render Deployed Link]
+- **Frontend:** Deployed on Vercel. Access it at: https://san-library.vercel.app/
+- **Backend:** Deployed on Render. Access the API endpoints at: (https://san-library.onrender.com/)
 
 ## Conclusion
 
